@@ -13,9 +13,16 @@ public:
 
 	double rotation, radius;
 
+
+	virtual ~RigidBody() = default;
+
+
 	virtual void Draw() = 0;
 
-	//virtual bool IsColliding();
+	virtual bool IsColliding(RigidBody* body)
+	{
+		return false;
+	}
 
 	virtual void SimulatePhysics(double timeStep) = 0;
 

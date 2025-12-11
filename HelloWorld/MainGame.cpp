@@ -2,14 +2,16 @@
 #define PLAY_USING_GAMEOBJECT_MANAGER
 #include "Play.h"
 #include "Constants.h"
-
-
+#include "Game.h"
+#include "Ship.h"
+#include "Asteroid.h"
 
 
 // The entry point for a PlayBuffer program
 void MainGameEntry( PLAY_IGNORE_COMMAND_LINE )
 {
 	Play::CreateManager( DISPLAY_WIDTH, DISPLAY_HEIGHT, DISPLAY_SCALE );
+	Play::CentreAllSpriteOrigins();
 }
 
 // Called by PlayBuffer every frame (60 times a second!)
@@ -18,10 +20,7 @@ bool MainGameUpdate( float elapsedTime )
 	Play::ClearDrawingBuffer( Play::cBlack );
 
 
-
-
-
-
+	StepFrame(elapsedTime);
 
 
 
@@ -34,5 +33,6 @@ bool MainGameUpdate( float elapsedTime )
 int MainGameExit( void )
 {
 	Play::DestroyManager();
+	DestroyObjects();
 	return PLAY_OK;
 }

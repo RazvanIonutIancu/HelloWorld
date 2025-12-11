@@ -7,12 +7,14 @@
 
 class Asteroid : public RigidBody
 {
-
+public:
 	double scale;
 	double rotSpeed;
 	std::string spriteID = "asteroid";
 
 	void Draw() override;
+
+	//~Asteroid();
 
 	Asteroid();
 
