@@ -9,6 +9,8 @@
 Asteroid::Asteroid()
 {
 
+	// Decides spawn locations, which have to be outside the screen but not too far away
+	// This number decides the side
 	int side = rand() % 4;
 
 	if (side == 0)
@@ -50,9 +52,9 @@ Asteroid::Asteroid()
 	} while (vel.x < 5 && vel.x > -5 &&
 		vel.y < 5 && vel.y > -5);
 
-
-	acc.x = 0;
-	acc.y = 0;
+	// No acceleration needed for the asteroids
+	/*acc.x = 0;
+	acc.y = 0;*/
 
 	scale = 0.5f + (rand() % 101) * 0.02;
 	radius = ASTEROID_RADIUS * scale;

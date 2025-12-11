@@ -6,6 +6,7 @@
 
 Ship::Ship()
 {
+
 	pos.x = DISPLAY_WIDTH / 2;
 	pos.y = DISPLAY_HEIGHT / 2;
 	vel.x = 0;
@@ -53,6 +54,7 @@ void Ship::SimulatePhysics(double timeStep)
 
 	pos += vel * timeStep;
 
+	// Snap to the other side if it hits any edge
 	if (pos.x > DISPLAY_WIDTH) pos.x = 0;
 	if (pos.x < 0) pos.x = DISPLAY_WIDTH;
 	if (pos.y > DISPLAY_HEIGHT) pos.y = 0;

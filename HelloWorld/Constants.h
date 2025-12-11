@@ -8,3 +8,5 @@ const int DISPLAY_SCALE = 1;
 
 const double ASTEROID_RADIUS = 30 / 2;
 const double SHIP_RADIUS = 30 / 2;
+
+const int NUM_OF_ASTEROIDS = 100;
