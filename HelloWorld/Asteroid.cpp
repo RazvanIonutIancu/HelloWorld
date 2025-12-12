@@ -37,6 +37,9 @@ Asteroid::Asteroid()
 	//pos.y = DISPLAY_HEIGHT / 2;
 	//pos.x = DISPLAY_WIDTH / 2;
 
+	/*pos.x = 0;
+	pos.y = DISPLAY_HEIGHT;*/
+
 
 
 
@@ -44,17 +47,18 @@ Asteroid::Asteroid()
 
 
 	// Making sure the asteroid is not just standing there
+
 	do
 	{
-		vel.x = 20 + (rand() % 201) - 100;
+		vel.x = (rand() % 201) - 100;
 		vel.y = (rand() % 201) - 100;
 
 	} while (vel.x < 5 && vel.x > -5 &&
 		vel.y < 5 && vel.y > -5);
 
 	// No acceleration needed for the asteroids
-	/*acc.x = 0;
-	acc.y = 0;*/
+	acc.x = 0;
+	acc.y = 0;
 
 	scale = 0.5f + (rand() % 101) * 0.02;
 	radius = ASTEROID_RADIUS * scale;
